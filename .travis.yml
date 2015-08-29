@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: IH4YkqVHFe43KtZKbcRg1IKSbIABsZUnTzkXq3gmbRjdBXQ+qydEvfW/oBNaeu6pFYNEOAgYlSLOLxhscRCteM4KTstz33rRhkERbF3CCpbusHzo3eEPN+xC6/KrO489/18n3cXSpJYa21MrSSZ2UFilFKqt4XOd8yH4Ro0eXvHZtCuVEOF/1zMw0lp9K6GtdWCxEfafFw2ZUjufzVbDObneXgawuUNkMfISHmQB2++p1mvIqBVwMCZAEZL6zxaM5/c+Q+3gpwBSPOIWJBwi/HehRhiNxjE1AT9ljUwwW+XDMCE//mGYp5eJgO5nuWkQdzUE71e2/tymHqTHgfvBZvEnmCIcY0dpaABItRoztQ9dXA20nUC8428n1dZwov/jyNPmIWJxOq2py3MEm3kjO3bTYdxDGgOVWgnKKvnfjl+tpK/cQgOGyslh2BPuoGE6tdtizerkbE0MxUUW8cQhF+bxsh5IxxWD0bMGAE+NaRM6RbYCzfJkLY1O7stK4O9oqncvFNI7wGDuyNuU5+T6bRInliTtBpEj/qH8YxMMyCfYHAx+ZAsTI0/ENBd49HJ8oO+cIqzBVyTdjn0mPhoH8VVkU8KECOYnigymQNqpTHEOD0/KXVHdkcvz5yO+yRB2KzbXFtWrPRoODQn4BjCTtb9YCg7IVP8RiFoNvLb1nUY=
+  app: hoofpic
+  on:
+    repo: dfudger/farrierWebApp
