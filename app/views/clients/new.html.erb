@@ -1,6 +1,20 @@
 <h1>New Client</h1>
 
-<%= form_for :client do |f| %>
+<%= form_for :client, url: clients_path do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@client.errors.count, "error") %> prohibited
+        this client from being saved:
+      </h2>
+      <ul>
+        <% @client.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -30,3 +44,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', clients_path %>
