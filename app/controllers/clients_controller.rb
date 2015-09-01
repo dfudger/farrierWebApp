@@ -11,6 +11,10 @@ class ClientsController < ApplicationController
 		@client = Client.new
 	end
 
+	def edit
+	  @client = Client.find(params[:id])
+	end
+
 	def create
 		@client = Client.new(client_params)
 
@@ -18,6 +22,16 @@ class ClientsController < ApplicationController
 			redirect_to @client
 		else
 			render 'new'
+		end
+	end
+
+	def update
+  	@client = Client.find(params[:id])
+
+		if @client.update(client_params)
+		  redirect_to @client
+		else
+		  render 'edit'
 		end
 	end
 
