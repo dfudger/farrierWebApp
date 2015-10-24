@@ -28,7 +28,7 @@ class ClientsController < ApplicationController
 	def update
   	@client = Client.find(params[:id])
 
-		if @client.update(client_params)
+		if @client.update(	client_params)
 		  redirect_to @client
 		else
 		  render 'edit'
@@ -39,7 +39,7 @@ class ClientsController < ApplicationController
 	  @client = Client.find(params[:id])
 	  @client.destroy
 
-	  redirect_to articles_path
+	  redirect_to clients_path
 	end
 
 	private
