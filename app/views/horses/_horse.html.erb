@@ -1,3 +1,8 @@
 <p>
   <%= horse.name %> : <%= horse.comment %>
 </p>
+<p>
+  <%= link_to 'Remove Horse', [horse.client, horse],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

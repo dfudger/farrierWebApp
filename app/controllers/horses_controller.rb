@@ -5,6 +5,12 @@ class HorsesController < ApplicationController
     redirect_to client_path(@client)
   end
 
+  def destroy
+      @client = Client.find(params[:client_id])
+      @horse = @client.horses.find(params[:id])
+      @horse.destroy
+      redirect_to client_path(@client)
+    end
   private
   def horse_params
     params.require(:horse).permit(:name, :comment)
