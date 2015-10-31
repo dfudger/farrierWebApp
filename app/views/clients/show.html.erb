@@ -27,7 +27,6 @@
 <h2>Horses</h2>
 <%= render @client.horses %>
 <p><p>
-<h3>Add a horse:</h3>
-<%= render 'horses/form' %>
-
+<%= link_to 'Create Horse', new_client_horse_path(@client) %>
+<br>
 <%= link_to 'Back', clients_path %>
