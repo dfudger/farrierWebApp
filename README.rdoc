@@ -2,4 +2,8 @@
 
 This is a Ruby on Rails web application for the management and care of horses hooves for farriers.
 
+Current Features:
+- Able to add new clients
+- Clients can have horses
+
 Developed by: Danielle Fudger
