@@ -1,0 +1,21 @@
+<h1>List of Horses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Client</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @horses.each do |horse| %>
+    <tr>
+      <td><%= horse.name %></td>
+      <td><%= horse.client.name %></td>
+      <td><%= link_to 'Show', client_horse_path(horse.client, horse) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Home', root_path %>
+</p>

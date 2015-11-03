@@ -1,6 +1,15 @@
 class HorsesController < ApplicationController
   http_basic_authenticate_with name: "dani", password: "secret", only: :destroy
 
+  def index
+    if params.has_key?(:client_id)
+      @client = Client.find(params[:client_id])
+      @horses = @client.horses
+    else
+  		@horses = Horse.all
+    end
+	end
+
   def create
     @client = Client.find(params[:client_id])
     @horse = @client.horses.create(horse_params)
