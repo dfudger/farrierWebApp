@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :clients do
     resources :horses
   end
+  resources :horses do
+    resources :appointments
+  end
+
   get 'horses' => 'horses#index'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
