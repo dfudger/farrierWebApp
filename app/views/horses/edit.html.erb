@@ -1,5 +1,6 @@
-<%= form_for([@client, @client.horses.build]) do |f| %>
+<h1>Edit Horse Information</h1>
 
+<%= form_for :horse, url: client_horse_path(@client, @horse), method: :patch do |f| %>
   <% if @horse.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -26,3 +27,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Cancel', client_horse_path %>

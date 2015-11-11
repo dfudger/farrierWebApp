@@ -16,7 +16,7 @@
 <h2>Appointments</h2>
 <%= render @horse.appointments %>
 
-<h2>Add a appointment:</h2>
+<h4>Add a appointment:</h4>
 <%= form_for([@horse, @horse.appointments.build]) do |f| %>
   <p>
     <%= f.label :start %><br>

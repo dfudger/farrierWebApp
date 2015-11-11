@@ -21,6 +21,22 @@ class HorsesController < ApplicationController
 		@horse = Horse.new
 	end
 
+  def edit
+    @client = Client.find(params[:client_id])
+    @horse = Horse.find(params[:id])
+  end
+
+  def update
+  	@client = Client.find(params[:id])
+    @horse = @client.horses.find(params[:id])
+
+    if @horse.update(horse_params)
+		  redirect_to client_horse_path(@client, @horse)
+		else
+		  render 'edit'
+		end
+	end
+
   def show
     @client = Client.find(params[:client_id])
     @horse = Horse.find(params[:id])
