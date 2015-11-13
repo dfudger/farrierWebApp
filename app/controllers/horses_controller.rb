@@ -27,7 +27,7 @@ class HorsesController < ApplicationController
   end
 
   def update
-  	@client = Client.find(params[:id])
+  	@client = Client.find(params[:client_id])
     @horse = @client.horses.find(params[:id])
 
     if @horse.update(horse_params)
