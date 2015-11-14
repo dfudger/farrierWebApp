@@ -16,10 +16,10 @@ class HorsesController < ApplicationController
     redirect_to client_path(@client)
   end
 
-  def new
-    @client = Client.find(params[:client_id])
-		@horse = Horse.new
-	end
+# def new
+#    @client = Client.find(params[:client_id])
+#		@horse = Horse.new
+#	end
 
   def edit
     @client = Client.find(params[:client_id])
