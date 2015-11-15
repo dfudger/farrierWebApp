@@ -1,0 +1,17 @@
+<h2><%= @stable.name %></h2>
+<p><%= @stable.owner %></p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @stable.comment %>
+</p>
+
+<h4>Contact Information</h4>
+
+<%= @stable.address %><br>
+<%= @stable.phoneNo %><br>
+<%= @stable.email %><br>
+
+
+<br>
+<%= link_to 'Back', stables_path %>
