@@ -18,6 +18,10 @@ class StablesController < ApplicationController
     #@horse = Horse.find(params[:id])
   end
 
+  def index
+    @stables = Stable.all
+  end
+
   private
   def stable_params
 		params.require(:stable).permit(:name, :owner, :phoneNo, :address, :email, :comment)
