@@ -15,12 +15,26 @@ class StablesController < ApplicationController
 
   def show
     @stable = Stable.find(params[:id])
-    #@horse = Horse.find(params[:id])
+
   end
 
   def index
     @stables = Stable.all
   end
+
+  def edit
+		@stable = Stable.find(params[:id])
+	end
+
+  def update
+  	@stable = Stable.find(params[:id])
+
+		if @stable.update(stable_params)
+		  redirect_to @stable
+		else
+		  render 'edit'
+		end
+	end
 
   private
   def stable_params
