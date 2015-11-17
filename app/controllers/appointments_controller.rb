@@ -20,7 +20,6 @@ class AppointmentsController < ApplicationController
 
   def update
     @horse = Horse.find(params[:horse_id])
-    @client = @horse.client
     @appointment = @horse.appointments.find(params[:id])
 
     if @appointment.update(appointment_params)
@@ -32,6 +31,6 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:start, :end, :location)
+    params.require(:appointment).permit(:start, :end, :location, :comment)
   end
 end
