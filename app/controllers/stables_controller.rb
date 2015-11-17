@@ -36,6 +36,13 @@ class StablesController < ApplicationController
 		end
 	end
 
+  def destroy
+	  @stable = Stable.find(params[:id])
+	  @stable.destroy
+
+	  redirect_to stables_path
+	end
+
   private
   def stable_params
 		params.require(:stable).permit(:name, :owner, :phoneNo, :address, :email, :comment)
