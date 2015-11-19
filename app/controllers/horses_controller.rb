@@ -7,11 +7,6 @@ class HorsesController < ApplicationController
     redirect_to client_path(@client)
   end
 
-  # def new
-  #    @client = Client.find(params[:client_id])
-  #		@horse = Horse.new
-  #	end
-
   def edit
     @client = Client.find(params[:client_id])
     @horse = Horse.find(params[:id])
@@ -40,6 +35,7 @@ class HorsesController < ApplicationController
   def show
     @client = Client.find(params[:client_id])
     @horse = Horse.find(params[:id])
+    @stable = @horse.stable_id
   end
 
   def destroy
@@ -50,6 +46,6 @@ class HorsesController < ApplicationController
     end
   private
   def horse_params
-    params.require(:horse).permit(:name, :comment)
+    params.require(:horse).permit(:name, :comment, :stable_id)
   end
 end

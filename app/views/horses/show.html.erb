@@ -9,9 +9,14 @@
   <%= @client.name %>
 </p>
 <p>
+  <strong>Stable:</strong>
+  <%= @stable.name %>
+</p>
+<p>
   <strong>Comments about <%=@horse.name %>:</strong>
   <%= @horse.comment %>
 </p>
+<br><br>
 
 <h2>Appointments</h2>
 <%= render @horse.appointments %>
