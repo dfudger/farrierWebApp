@@ -10,6 +10,7 @@ class HorsesController < ApplicationController
   def edit
     @client = Client.find(params[:client_id])
     @horse = Horse.find(params[:id])
+    @stables = Stable.all
   end
 
   def update

@@ -23,6 +23,21 @@
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </p>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th colspan="2"></th>
+    </tr>
+
+    <% @stables.each do |stable| %>
+      <tr>
+        <td><%= stable.name %></td>
+        <td><%= stable.id %></td>
+      </tr>
+    <% end %>
+  </table>
   <p>
     <%= f.label :stable %><br>
     <%= f.text_area :stable_id %>
