@@ -12,6 +12,7 @@
       <td><%= horse.name %></td>
       <td><%= horse.client.name %></td>
       <td><%= link_to 'Show', client_horse_path(horse.client, horse) %></td>
+      <td><%= link_to 'Edit', edit_client_horse_path(horse.client, horse) %></td>
     </tr>
   <% end %>
 </table>

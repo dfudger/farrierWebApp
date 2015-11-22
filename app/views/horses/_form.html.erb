@@ -18,9 +18,9 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+  <%= f.collection_select :stable_id, Stable.all, :id, :name %>
   <p>
-    <%= f.label :stable %><br>
-    <%= f.text_area :stable_id %>
+    <%= link_to 'Create a New Stable', new_stable_path %>
   </p>
   <p>
     <%= f.label :comment %><br>
