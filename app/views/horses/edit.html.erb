@@ -24,23 +24,9 @@
     <%= f.text_area :comment %>
   </p>
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>ID</th>
-      <th colspan="2"></th>
-    </tr>
-
-    <% @stables.each do |s| %>
-      <tr>
-        <td><%= s.name %></td>
-        <td><%= s.id %></td>
-      </tr>
-    <% end %>
-  </table>
+  <%= f.collection_select :stable_id, Stable.all, :id, :name %>
   <p>
-    <%= f.label :stable %><br>
-    <%= f.text_area :stable_id %>
+    <%= link_to 'Create a New Stable', new_stable_path %>
   </p>
   <p>
     <%= f.label :comment %><br>
