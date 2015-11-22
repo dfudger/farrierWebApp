@@ -1,3 +1,3 @@
 class Stable < ActiveRecord::Base
-  belongs_to :horse
+  has_many :horses
 end

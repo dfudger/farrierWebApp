@@ -36,7 +36,7 @@ class HorsesController < ApplicationController
   def show
     @client = Client.find(params[:client_id])
     @horse = Horse.find(params[:id])
-    @stable = @horse.stable_id
+    @stable = @horse.stable#Stable.find(params[:stable_id])
   end
 
   def destroy
