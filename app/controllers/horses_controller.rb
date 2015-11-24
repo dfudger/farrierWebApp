@@ -13,6 +13,11 @@ class HorsesController < ApplicationController
     @stables = Stable.all
   end
 
+  def new
+    @client = Client.find(params[:client_id])
+		@horse = Horse.new
+  end
+
   def update
     @client = Client.find(params[:client_id])
     @horse = @client.horses.find(params[:id])
