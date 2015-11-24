@@ -5,5 +5,6 @@ This is a Ruby on Rails web application for the management and care of horses ho
 Current Features:
 - Able to add new clients
 - Clients can have horses
+- Can list stables
 
 Developed by: Danielle Fudger
