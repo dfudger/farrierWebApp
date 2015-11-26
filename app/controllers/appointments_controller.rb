@@ -14,13 +14,12 @@ class AppointmentsController < ApplicationController
 
   def edit
     @horse = Horse.find(params[:horse_id])
-    #@client = @horse.client
     @appointment = Appointment.find(params[:id])
   end
 
   def update
     @horse = Horse.find(params[:horse_id])
-    @appointment = @horse.appointments.find(params[:id])
+    @appointment = Appointment.find(params[:id])
 
     if @appointment.update(appointment_params)
 		  redirect_to client_horse_path(@client, @horse)
