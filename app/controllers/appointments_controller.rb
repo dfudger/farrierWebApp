@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
   def update
     @horse = Horse.find(params[:horse_id])
     @appointment = Appointment.find(params[:id])
+    @client = @horse.client
 
     if @appointment.update(appointment_params)
 		  redirect_to client_horse_path(@client, @horse)

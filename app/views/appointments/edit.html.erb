@@ -1,6 +1,6 @@
 <h1>Edit Appointment</h1>
 
-<%= form_for([@horse, @horse.appointments.build]) do |f| %>
+<%= form_for :appointment, url: horse_appointment_path(@horse, @appointment), method: :patch do |f| %>
   <p>
     <%= f.label :start %><br>
     <%= f.datetime_field :start %> <br>
