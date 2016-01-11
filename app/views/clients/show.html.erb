@@ -1,4 +1,5 @@
-<h2>Client Information</h2>
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Name:</strong>
   <%= @client.name %>
@@ -20,13 +21,9 @@
 </p>
 
 <p>
-  <strong>Comments:</strong>
+  <strong>Comment:</strong>
   <%= @client.comment %>
 </p>
 
-<h2>Horses</h2>
-<%= render @client.horses %>
-<p><p>
-<%= link_to 'Create Horse', new_client_horse_path(@client) %>
-<br>
+<%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

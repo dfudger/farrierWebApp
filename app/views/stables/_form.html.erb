@@ -1,50 +1,41 @@
-<%= form_for @stable do |f| %>
-
+<%= form_for(@stable) do |f| %>
   <% if @stable.errors.any? %>
     <div id="error_explanation">
-      <h2>
-        <%= pluralize(@stable.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
+      <h2><%= pluralize(@stable.errors.count, "error") %> prohibited this stable from being saved:</h2>
+
       <ul>
-        <% @stable.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+      <% @stable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <p>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :owner %><br>
     <%= f.text_field :owner %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :phoneNo %><br>
     <%= f.text_field :phoneNo %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
-  </p>
-
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
-  </p>
-
-  <p>
+  </div>
+  <div class="actions">
     <%= f.submit %>
-  </p>
-
+  </div>
 <% end %>

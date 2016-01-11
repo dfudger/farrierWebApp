@@ -4,10 +4,8 @@ one:
   name: MyString
   photo: MyString
   comment: MyText
-  client_id: 
 
 two:
   name: MyString
   photo: MyString
   comment: MyText
-  client_id: 

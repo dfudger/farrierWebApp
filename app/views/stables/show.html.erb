@@ -1,17 +1,34 @@
-<h2><%= @stable.name %></h2>
-<p><%= @stable.owner %></p>
+<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Comments:</strong>
+  <strong>Name:</strong>
+  <%= @stable.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @stable.owner %>
+</p>
+
+<p>
+  <strong>Phoneno:</strong>
+  <%= @stable.phoneNo %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @stable.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @stable.email %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
   <%= @stable.comment %>
 </p>
 
-<h4>Contact Information</h4>
-
-<%= @stable.address %><br>
-<%= @stable.phoneNo %><br>
-<%= @stable.email %><br>
-
-
-<br>
+<%= link_to 'Edit', edit_stable_path(@stable) %> |
 <%= link_to 'Back', stables_path %>

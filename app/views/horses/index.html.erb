@@ -1,22 +1,31 @@
-<h1>List of Horses</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Horses</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Client</th>
-    <th colspan="2"></th>
-  </tr>
-
-  <% @horses.each do |horse| %>
+  <thead>
     <tr>
-      <td><%= horse.name %></td>
-      <td><%= horse.client.name %></td>
-      <td><%= link_to 'Show', client_horse_path(horse.client, horse) %></td>
-      <td><%= link_to 'Edit', edit_client_horse_path(horse.client, horse) %></td>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @horses.each do |horse| %>
+      <tr>
+        <td><%= horse.name %></td>
+        <td><%= horse.photo %></td>
+        <td><%= horse.comment %></td>
+        <td><%= link_to 'Show', horse %></td>
+        <td><%= link_to 'Edit', edit_horse_path(horse) %></td>
+        <td><%= link_to 'Destroy', horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<p>
-  <%= link_to 'Home', root_path %>
-</p>
+<br>
+
+<%= link_to 'New Horse', new_horse_path %>

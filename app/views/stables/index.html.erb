@@ -1,36 +1,37 @@
-<h1>List of Stables</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stables</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Owner</th>
-    <th>Phone</th>
-    <th>Address</th>
-    <th>Email</th>
-    <th>Comment</th>
-    <th colspan="2"></th>
-  </tr>
-
-  <% @stables.each do |stable| %>
+  <thead>
     <tr>
-      <td><%= stable.name %></td>
-      <td><%= stable.owner %></td>
-      <td><%= stable.phoneNo %></td>
-      <td><%= stable.address %></td>
-      <td><%= stable.email %></td>
-      <td><%= stable.comment %></td>
-      <td><%= link_to 'Show', stable_path(stable) %></td>
-      <td><%= link_to 'Edit', edit_stable_path(stable) %></td>
-      <td><%= link_to 'Destroy', stable_path(stable),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Phoneno</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @stables.each do |stable| %>
+      <tr>
+        <td><%= stable.name %></td>
+        <td><%= stable.owner %></td>
+        <td><%= stable.phoneNo %></td>
+        <td><%= stable.address %></td>
+        <td><%= stable.email %></td>
+        <td><%= stable.comment %></td>
+        <td><%= link_to 'Show', stable %></td>
+        <td><%= link_to 'Edit', edit_stable_path(stable) %></td>
+        <td><%= link_to 'Destroy', stable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<p>
-  <%= link_to 'Create a New Stable', new_stable_path %>
-</p>
-<p>
-  <%= link_to 'Home', root_path %>
-</p>
+<br>
+
+<%= link_to 'New Stable', new_stable_path %>

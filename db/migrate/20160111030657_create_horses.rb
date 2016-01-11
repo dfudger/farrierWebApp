@@ -4,7 +4,6 @@ class CreateHorses < ActiveRecord::Migration
       t.string :name
       t.string :photo
       t.text :comment
-      t.references :client, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -1,40 +1,6 @@
-<h1>Edit Horse Information</h1>
+<h1>Editing Horse</h1>
 
-<%= form_for :horse, url: client_horse_path(@client, @horse), method: :patch do |f| %>
-  <% if @horse.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@horse.errors.count, "error") %> prohibited
-        this horse from being saved:
-      </h2>
-      <ul>
-        <% @horse.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'form' %>
 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
-  </p>
-
-  <%= f.collection_select :stable_id, Stable.all, :id, :name %>
-  <p>
-    <%= link_to 'Create a New Stable', new_stable_path %>
-  </p>
-  <p>
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Cancel', client_horse_path %>
+<%= link_to 'Show', @horse %> |
+<%= link_to 'Back', horses_path %>

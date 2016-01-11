@@ -1,24 +1,19 @@
-<h1>My Horse</h1>
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
   <%= @horse.name %>
 </p>
+
 <p>
-  <strong>Owner:</strong>
-  <%= @client.name %>
+  <strong>Photo:</strong>
+  <%= @horse.photo %>
 </p>
+
 <p>
-  <strong>Stable:</strong>
-  <%= @stable.name %>
-</p>
-<p>
-  <strong>Comments about <%=@horse.name %>:</strong>
+  <strong>Comment:</strong>
   <%= @horse.comment %>
 </p>
-<br><br>
 
-<h2>Appointments</h2>
-<%= render @horse.appointments %>
-
-<%= render 'appointments/form' %>
+<%= link_to 'Edit', edit_horse_path(@horse) %> |
+<%= link_to 'Back', horses_path %>

@@ -5,7 +5,6 @@ class CreateAppointments < ActiveRecord::Migration
       t.datetime :start
       t.datetime :end
       t.string :location
-      t.references :horse, index: true, foreign_key: true
 
       t.timestamps null: false
     end
