@@ -14,6 +14,7 @@ class HorsesController < ApplicationController
 
   # GET /horses/new
   def new
+    #@client = Client.find(params[:client_id])
     @horse = Horse.new
   end
 
