@@ -1,4 +1,4 @@
-<%= form_for(@horse) do |f| %>
+<%= form_for([@client, @client.horses.build]) do |f| %>
   <% if @horse.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@horse.errors.count, "error") %> prohibited this horse from being saved:</h2>

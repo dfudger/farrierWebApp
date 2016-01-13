@@ -28,5 +28,7 @@
 <h2>Horses</h2>
 <%= render @client.horses %>
 
+<p><%= link_to 'New Horse', new_client_horse_path(@client) %></p>
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

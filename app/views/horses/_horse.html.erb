@@ -1,0 +1,9 @@
+<ul>
+  <li>
+    <%= link_to horse.name, client_horse_path(horse.client, horse) %>:
+    <%= link_to 'Edit', edit_client_horse_path(horse.client, horse) %>
+    <%= link_to 'Remove', [horse.client, horse],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </li>
+</ul>

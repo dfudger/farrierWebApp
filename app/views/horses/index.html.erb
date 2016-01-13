@@ -18,8 +18,8 @@
         <td><%= horse.name %></td>
         <td><%= horse.photo %></td>
         <td><%= horse.comment %></td>
-        <td><%= link_to 'Show', horse %></td>
-        <td><%= link_to 'Edit', edit_horse_path(horse) %></td>
+        <td><%= link_to 'Show', client_horse_path(horse.client, horse) %></td>
+        <td><%= link_to 'Edit', edit_client_horse_path(horse.client, horse) %></td>
         <td><%= link_to 'Destroy', horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,5 +27,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Horse', new_horse_path %>

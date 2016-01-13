@@ -1,35 +1,46 @@
 class HorsesController < ApplicationController
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
 
-  # GET /horses
-  # GET /horses.json
+  # GET /clients/:client_id/horses
+  # GET /clients/:client_id/horses.json
   def index
-    @horses = Horse.all
+    if params.has_key?(:client_id)
+      @client = Client.find(params[:client_id])
+      @horses = @client.horses
+    else
+  		@horses = Horse.all
+    end
   end
 
-  # GET /horses/1
-  # GET /horses/1.json
+  # GET /clients/:client_id/horses/:id
+  # GET /clients/:client_id/horses/:id.json
   def show
+    @client = Client.find(params[:client_id])
+    @horse = Horse.find(params[:id])
+    #@stable = @horse.stable
   end
 
-  # GET /horses/new
+  # GET clients/:client_id/horses/new
   def new
-    #@client = Client.find(params[:client_id])
+    @client = Client.find(params[:client_id])
     @horse = Horse.new
   end
 
-  # GET /horses/1/edit
+  # GET /clients/:client_id/horses/:id/edit
   def edit
+    #@client = Client.find(params[:client_id])
+    @horse = Horse.find(params[:id])
   end
 
-  # POST /horses
-  # POST /horses.json
+  # POST /clients/:client_id/horses
+  # POST /clients/:client_id/horses.json
   def create
-    @horse = Horse.new(horse_params)
+    @client = Client.find(params[:client_id])
+    @horse = @client.horses.create(horse_params)
 
     respond_to do |format|
       if @horse.save
-        format.html { redirect_to @horse, notice: 'Horse was successfully created.' }
+        format.html { redirect_to client_horse_path(@client, @horse), notice: 'Horse was successfully created.' }
         format.json { render :show, status: :created, location: @horse }
       else
         format.html { render :new }
@@ -38,12 +49,15 @@ class HorsesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /horses/1
-  # PATCH/PUT /horses/1.json
+  # PATCH/PUT /clients/:client_id/horses/:id
+  # PATCH/PUT /clients/:client_id/horses/:id.json
   def update
+    @client = Client.find(params[:client_id])
+    @horse = @client.horses.find(params[:id])
+
     respond_to do |format|
       if @horse.update(horse_params)
-        format.html { redirect_to @horse, notice: 'Horse was successfully updated.' }
+        format.html { redirect_to client_horse_path(@client, @horse), notice: 'Horse was successfully updated.' }
         format.json { render :show, status: :ok, location: @horse }
       else
         format.html { render :edit }
@@ -52,12 +66,15 @@ class HorsesController < ApplicationController
     end
   end
 
-  # DELETE /horses/1
-  # DELETE /horses/1.json
+  # DELETE /clients/:client_id/horses/:id
+  # DELETE /clients/:client_id/horses/:id.json
   def destroy
+    #@client = Client.find(params[:client_id])
+    @horse = @client.horses.find(params[:id])
     @horse.destroy
+
     respond_to do |format|
-      format.html { redirect_to horses_url, notice: 'Horse was successfully destroyed.' }
+      format.html { redirect_to client_path(@client), notice: 'Horse was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
