@@ -28,8 +28,8 @@ class HorsesController < ApplicationController
 
   # GET /clients/:client_id/horses/:id/edit
   def edit
-    #@client = Client.find(params[:client_id])
-    @horse = Horse.find(params[:id])
+    @client = Client.find(params[:client_id])
+    @horse = @client.horses.find(params[:id])
   end
 
   # POST /clients/:client_id/horses
