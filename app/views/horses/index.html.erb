@@ -20,7 +20,6 @@
         <td><%= horse.comment %></td>
         <td><%= link_to 'Show', client_horse_path(horse.client, horse) %></td>
         <td><%= link_to 'Edit', edit_client_horse_path(horse.client, horse) %></td>
-        <td><%= link_to 'Destroy', horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

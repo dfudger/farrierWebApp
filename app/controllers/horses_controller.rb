@@ -69,7 +69,7 @@ class HorsesController < ApplicationController
   # DELETE /clients/:client_id/horses/:id
   # DELETE /clients/:client_id/horses/:id.json
   def destroy
-    #@client = Client.find(params[:client_id])
+    @client = Client.find(params[:client_id])
     @horse = @client.horses.find(params[:id])
     @horse.destroy
 

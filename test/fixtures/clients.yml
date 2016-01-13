@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
-  email: MyString
-  phone: MyString
-  comment: MyText
+  name: Danielle
+  address: Montreal
+  email: foo@bar.comment
+  phone: 444-555-6666
+  comment: First
 
 two:
   name: MyString
