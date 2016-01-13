@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113013144) do
+ActiveRecord::Schema.define(version: 20160113013638) do
 
   create_table "appointments", force: :cascade do |t|
     t.text     "comment"
@@ -41,7 +41,12 @@ ActiveRecord::Schema.define(version: 20160113013144) do
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "client_id"
+    t.integer  "stable_id"
   end
+
+  add_index "horses", ["client_id"], name: "index_horses_on_client_id"
+  add_index "horses", ["stable_id"], name: "index_horses_on_stable_id"
 
   create_table "stables", force: :cascade do |t|
     t.string   "name"
