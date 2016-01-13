@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160113013638) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "appointments", force: :cascade do |t|
     t.text     "comment"
     t.datetime "start"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160113013638) do
     t.integer  "horse_id"
   end
 
-  add_index "appointments", ["horse_id"], name: "index_appointments_on_horse_id"
+  add_index "appointments", ["horse_id"], name: "index_appointments_on_horse_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -45,8 +48,8 @@ ActiveRecord::Schema.define(version: 20160113013638) do
     t.integer  "stable_id"
   end
 
-  add_index "horses", ["client_id"], name: "index_horses_on_client_id"
-  add_index "horses", ["stable_id"], name: "index_horses_on_stable_id"
+  add_index "horses", ["client_id"], name: "index_horses_on_client_id", using: :btree
+  add_index "horses", ["stable_id"], name: "index_horses_on_stable_id", using: :btree
 
   create_table "stables", force: :cascade do |t|
     t.string   "name"
@@ -66,4 +69,7 @@ ActiveRecord::Schema.define(version: 20160113013638) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "appointments", "horses"
+  add_foreign_key "horses", "clients"
+  add_foreign_key "horses", "stables"
 end
