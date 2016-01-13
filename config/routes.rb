@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :users
 
   resources :clients do
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :stables
   get 'horses' => 'horses#index'
-#  root 'welcome#index'
+  root 'welcome#index'
 
 
 
