@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  resources :stables
-  resources :horses
-  resources :clients
-  resources :appointments
   resources :users
+
+  resources :clients do
+    resources :horses
+  end
+  resources :horses do
+    resources :appointments
+  end
+  resources :stables
+  get 'horses' => 'horses#index'
+#  root 'welcome#index'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
