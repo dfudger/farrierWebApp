@@ -43,7 +43,7 @@ test:
 production:
   <<: *default
   database: hoofpic_production
-  username: hoofpic
+  username: user
   password: <%= ENV['HOOFPIC_DATABASE_PASSWORD'] %>
 
 #production:
