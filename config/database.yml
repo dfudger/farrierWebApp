@@ -33,6 +33,7 @@ test:
   <<: *default
   adapter: postgresql
   database: hoofpic_test
+  username: user
 #test:
 #  <<: *default
 #  database: db/test.sqlite3
