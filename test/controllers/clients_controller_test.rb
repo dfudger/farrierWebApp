@@ -14,7 +14,7 @@ class ClientsControllerTest < ActionController::TestCase
 #  test "should get new" do
 #    get :new
 #    assert_response :success
-  end
+  #end
 
   test "should create client" do
     assert_difference('Client.count') do
