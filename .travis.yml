@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.1.0
 before_script:
-  - psql -c 'create database farrier_test;' -U postgres
+  - psql -c 'create database hoofpic_test;' -U postgres
 deploy:
   provider: heroku
   api_key:
